@@ -1,0 +1,247 @@
+:root {
+  --ink: #111318;
+  --muted: #5f6672;
+  --bg: #ffffff;
+  --panel: #fafafb;
+  --line: #e4e6ea;
+  --accent: #1d4ed8;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2 { line-height: 1.2; margin: 0 0 16px; letter-spacing: -.015em; }
+h1 { font-size: clamp(28px, 4.4vw, 40px); font-weight: 700; }
+h2 { font-size: 20px; font-weight: 600; }
+p { margin: 0 0 16px; }
+a { color: var(--accent); }
+
+/* ── Шапка ──────────────────────────────────────────────────────── */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 56px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.nav > a { color: var(--muted); text-decoration: none; }
+.nav > a:hover { color: var(--ink); }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.lang-toggle a,
+.lang-toggle button {
+  border: 0;
+  background: transparent;
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: .03em;
+  color: var(--muted);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lang-toggle a + a,
+.lang-toggle button + button,
+.lang-toggle a + button,
+.lang-toggle button + a { border-left: 1px solid var(--line); }
+.lang-toggle a.active,
+.lang-toggle button.active { color: var(--ink); background: var(--panel); }
+
+/* ── Секции ─────────────────────────────────────────────────────── */
+section { padding: 56px 0; }
+section + section { border-top: 1px solid var(--line); }
+
+.hero { padding: 72px 0 64px; }
+.hero .lead {
+  max-width: 620px;
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.meta { font-size: 13px; color: var(--muted); }
+
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 7px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn:hover { filter: brightness(1.08); }
+
+/* ── Скриншоты приложения ───────────────────────────────────────── */
+/* PNG окна лежит с прозрачными скруглёнными углами, поэтому тень —
+   drop-shadow по альфа-каналу, а не box-shadow по прямоугольнику. */
+.shot {
+  margin: 40px 0 0;
+  padding: 0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 1px rgba(17, 19, 24, .18)) drop-shadow(0 10px 28px rgba(17, 19, 24, .12));
+}
+
+/* ── Сильные стороны ────────────────────────────────────────────── */
+.points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.points li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 18px;
+  max-width: 640px;
+}
+
+.points li + li { margin-top: 14px; }
+
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 10px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ── Правка ─────────────────────────────────────────────────────── */
+.editing p { max-width: 620px; color: var(--muted); }
+
+/* ── Форматы ────────────────────────────────────────────────────── */
+.rows { border-top: 1px solid var(--line); max-width: 620px; }
+
+.row {
+  display: flex;
+  gap: 20px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.row-name {
+  flex: 0 0 90px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.row-note { color: var(--muted); }
+
+.note {
+  max-width: 620px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ── Загрузка ───────────────────────────────────────────────────── */
+.download p { max-width: 620px; color: var(--muted); }
+.download .actions { margin-top: 24px; }
+
+/* ── Подвал ─────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Адаптив ────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero { padding: 48px 0 44px; }
+  section { padding: 44px 0; }
+  .points li { font-size: 17px; }
+  .row { flex-direction: column; gap: 2px; }
+  .nav > a { display: none; }
+  .row-name { flex: none; }
+  .footer-row { justify-content: flex-start; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8eaee;
+    --muted: #99a0ac;
+    --bg: #0e1013;
+    --panel: #171a1f;
+    --line: #242831;
+    --accent: #7aa2ff;
+  }
+
+  .btn { color: #0e1013; font-weight: 600; }
+
+  /* на тёмном фоне окно сливается, поэтому к тени добавлена светлая кромка */
+  .shot img {
+    filter: drop-shadow(0 0 1px rgba(255, 255, 255, .2)) drop-shadow(0 12px 34px rgba(0, 0, 0, .55));
+  }
+}

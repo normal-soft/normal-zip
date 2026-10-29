@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Normal ZIP — Archivmanager für macOS</title>
+<meta name="description" content="Normal ZIP öffnet, extrahiert und bearbeitet ZIP-, RAR-, TAR-, TAR.GZ- und GZIP-Archive auf Mac mit Apple-Silicon-Chip.">
+<link rel="icon" type="image/png" href="../assets/icon-256.png">
+<link rel="stylesheet" href="../style.css">
+<script>
+(function () {
+  var langs = ['en', 'ru', 'es', 'fr', 'de'];
+  var base = location.pathname.replace(/\/index\.html$/, '');
+  if (!base) base = '/';
+  var out = [];
+  langs.forEach(function (l) {
+    var path = l === 'en' ? '/' : '/' + l + '/';
+    out.push('<link rel="alternate" hreflang="' + l + '" href="' + location.origin + path + '">');
+  });
+  out.push('<link rel="alternate" hreflang="x-default" href="' + location.origin + base + '">');
+  out.push('<link rel="canonical" href="' + location.origin + base + '">');
+  document.write(out.join('\n') + '\n');
+})();
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="#top">
+      <img src="../assets/icon-256.png" alt="" width="24" height="24">
+      Normal ZIP
+    </a>
+    <nav class="nav">
+      <a href="#formats">Formate</a>
+      <a href="#download">Herunterladen</a>
+      <span class="lang-toggle" role="group" aria-label="Language">
+        <a href="../" data-lang-page="en">EN</a>
+        <a href="../ru/" data-lang-page="ru">RU</a>
+        <a href="../es/" data-lang-page="es">ES</a>
+        <a href="../fr/" data-lang-page="fr">FR</a>
+        <a href="./" data-lang-page="de">DE</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="lang">Ein Archivmanager für macOS</h1>
+      <p class="lead lang">ZIP, RAR, TAR, TAR.GZ und GZIP — öffnen, extrahieren, bearbeiten.</p>
+
+      <p class="actions">
+        <a class="btn" href="https://github.com/normal-soft/normal-zip/releases/latest/download/normal-zip.dmg" download>
+          Für macOS herunterladen
+        </a>
+        <span class="meta lang"><span class="v">2026.10</span> · macOS 13+ · Apple Silicon · DMG, <span class="size">12</span> MB</span>
+      </p>
+
+      <figure class="shot">
+        <picture>
+          <source srcset="../assets/window-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="../assets/window-light.png" width="1040" height="330"
+               alt="Normal ZIP window: archive tree in the sidebar, file list with sizes, packed sizes and kinds">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <section class="points-section">
+    <div class="container">
+      <ul class="points">
+        <li class="lang">Schnell, zuverlässig und sorgsam mit deinen Dateien.</li>
+        <li class="lang">100.000 Dateien sind kein Problem. Ein 300&nbsp;GB-Archiv ist leicht.</li>
+        <li class="lang">Keine zusätzlichen Funktionen — nur das, was du wirklich brauchst.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="editing">
+    <div class="container">
+      <h2 class="lang">Bearbeitung</h2>
+      <p class="lang">Füge im Archiv Dateien hinzu, benenne um, verschiebe und lösche, als wäre es ein Ordner.
+        Ungespeicherte Einträge bleiben in Kursivschrift und die Statusleiste zählt sie, bis ⌘S
+        das Archiv mit einem Durchlauf neu schreibt.</p>
+
+      <figure class="shot">
+        <picture>
+          <source srcset="../assets/editing-dark.png" media="(prefers-color-scheme: dark)">
+          <img src="../assets/editing-light.png" width="1040" height="330"
+               alt="The same window with a new folder in italics, a Save button in the toolbar and two unsaved changes in the status bar">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <section id="formats" class="formats">
+    <div class="container">
+      <h2 class="lang">Formate</h2>
+      <div class="rows">
+        <div class="row">
+          <span class="row-name">ZIP</span>
+          <span class="row-note lang">lesen und schreiben, AES-256</span>
+        </div>
+        <div class="row">
+          <span class="row-name">RAR</span>
+          <span class="row-note lang">lesen und extrahieren; zum Bearbeiten wird das rar-Werkzeug benötigt</span>
+        </div>
+        <div class="row">
+          <span class="row-name">TAR</span>
+          <span class="row-note lang">lesen und schreiben</span>
+        </div>
+        <div class="row">
+          <span class="row-name">TAR.GZ</span>
+          <span class="row-note lang">lesen und schreiben</span>
+        </div>
+        <div class="row">
+          <span class="row-name">GZIP</span>
+          <span class="row-note lang">lesen und schreiben, eine Datei</span>
+        </div>
+      </div>
+      <p class="note lang">Verschlüsselte ZIP- und RAR-Archive öffnen sich mit einem Passwort. Namen, die in einer alten Kodierung gespeichert sind, können als cp866, cp1251, Shift_JIS und andere neu gelesen werden.</p>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <div class="container">
+      <h2 class="lang">Herunterladen</h2>
+      <p class="lang">Version <span class="v">2026.10</span> · DMG · macOS 13.0 oder neuer · nur Apple Silicon.
+        Der Build ist ad-hoc signiert, daher fragt macOS beim ersten Start eine Bestätigung ab.</p>
+      <p class="actions">
+        <a class="btn" href="https://github.com/normal-soft/normal-zip/releases/latest/download/normal-zip.dmg" download>
+          DMG herunterladen
+        </a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span>© 2026 <a href="https://rpsl.info">Rpsl</a></span>
+    <span class="lang">Für Mac gemacht, in Rust.</span>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
